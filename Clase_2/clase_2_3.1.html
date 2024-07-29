@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <section id="mensaje"> </section>
+    <script>
+        let data = localStorage.getItem("formData");
+        let mensaje = document.querySelector("mensaje");
+        if (data) {
+            data = JSON.parse(data);
+            mensaje.innerHTML = "Hola " + data.name + ", tu correo es " + data.email;
+        } else {
+            mensaje.innerHTML = "No hay datos guardados";
+        }
+    </script>
+    
+</body>
+</html>
